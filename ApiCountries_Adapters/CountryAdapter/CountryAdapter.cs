@@ -24,5 +24,23 @@ namespace ApiCountries_Adapters.CountryAdapter
             _res.Message = "OK";
             return _res;
         }
+
+        public ResponseModel Update(Country model)
+        {
+            _res.Data = _countrySvc.UpdateCountriesAsync(model);
+            _res.Success = true;
+            _res.Message = "OK";
+            return _res;
+        }
+
+        public ResponseModel Delete(short id)
+        {
+            _res.Data = _countrySvc.DeleteCountryAsync(id);
+            _res.Success = true;
+            _res.Message = "OK";
+            return _res;
+        }
+
+
     }
 }
