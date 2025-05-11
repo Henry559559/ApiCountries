@@ -23,5 +23,21 @@ namespace ApiCountries_Adapters.DepartmentAdapter
             _res.Message = "OK";
             return _res;
         }
+
+        public ResponseModel Update(Department model)
+        {
+            _res.Data = _countrySvc.UpdateDepartmentsAsync(model);
+            _res.Success = true;
+            _res.Message = "OK";
+            return _res;
+        }
+
+        public ResponseModel Delete(short id)
+        {
+            _res.Data = _countrySvc.DeleteDepartmentAsync(id);
+            _res.Success = true;
+            _res.Message = "OK";
+            return _res;
+        }
     }
 }

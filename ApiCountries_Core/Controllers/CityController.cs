@@ -18,5 +18,17 @@ namespace ApiCountries_Core.Controllers
         {
             return Ok(_cityAdp.Create(model));
         }
+
+        [HttpPut]
+        public IActionResult Update([FromBody] City model)
+        {
+            return Ok(_cityAdp.Update(model));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(short id)
+        {
+            return Ok(_cityAdp.Delete(id));
+        }
     }
 }

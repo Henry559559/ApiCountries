@@ -23,5 +23,21 @@ namespace ApiCountries_Adapters.CityAdapter
             _res.Message = "OK";
             return _res;
         }
+
+        public ResponseModel Update(City model)
+        {
+            _res.Data = _countrySvc.UpdateCitiesAsync(model);
+            _res.Success = true;
+            _res.Message = "OK";
+            return _res;
+        }
+
+        public ResponseModel Delete(short id)
+        {
+            _res.Data = _countrySvc.DeleteCityAsync(id);
+            _res.Success = true;
+            _res.Message = "OK";
+            return _res;
+        }
     }
 }
